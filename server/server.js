@@ -1,5 +1,4 @@
 const express = require("express");
-const cors = require("cors");
 require("dotenv/config");
 require("./db");
 
@@ -8,7 +7,6 @@ const PORT = process.env.PORT || 5005;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
 
 app.get('/', (req, res) =>{
   res.send("Api Home");
@@ -17,7 +15,7 @@ app.get('/', (req, res) =>{
 const indexRoutes = require('./routes/index.routes');
 app.use("/", indexRoutes)
 
-const userRoutes = require('./routes/user/routes');
+const userRoutes = require('./routes/user.routes');
 app.use("/user", userRoutes)
 
 app.listen(PORT, () => console.log("Server is listening to port " + PORT));
