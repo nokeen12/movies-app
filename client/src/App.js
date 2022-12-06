@@ -1,11 +1,10 @@
 import './App.css';
 import { Routes, Route } from "react-router-dom";
 import {
-  Footer,
-  Header,
   Homepage,
   ErrorPage
 } from "./pages";
+import { Header, Footer } from "./components/main-components"
 
 function App() {
   return (
