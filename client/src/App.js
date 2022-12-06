@@ -1,8 +1,21 @@
 import './App.css';
+import { Routes, Route } from "react-router-dom";
+import {
+  Footer,
+  Header,
+  Homepage,
+  ErrorPage
+} from "./pages";
 
 function App() {
   return (
     <div className="App">
+      <Header />
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }
