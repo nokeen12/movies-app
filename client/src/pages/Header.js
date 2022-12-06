@@ -1,7 +1,9 @@
+import "../css/Header.css";
+
 export default function Header(){
     return(
-        <div>
+        <nav>
             header
-        </div>
+        </nav>
     )
 }
