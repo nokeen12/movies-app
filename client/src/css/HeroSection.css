@@ -1,0 +1,6 @@
+#hero-section{
+    display: flex;
+    height: 90vh;
+    align-items: center;
+    padding-left: 100px;
+}

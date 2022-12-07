@@ -1,3 +1,4 @@
+import "../../css/HeroSection.css";
 export default function HeroSection(){
     return(
         <div id="hero-section">
