@@ -15,6 +15,11 @@ const userSchema = new Schema(
     password: {
       type: String,
       required: true,
+    },
+    icon: {
+      type: Number,
+      required: true,
+      default: 0, 
     }
   },
   {
