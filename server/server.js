@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) =>{
-  res.send("Api Home");
+  res.send("Movies App Home");
 })
 
 const indexRoutes = require('./routes/index.routes');
