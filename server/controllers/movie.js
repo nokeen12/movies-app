@@ -16,7 +16,14 @@ const getMovie = (req, res) => {
     .catch(err => res.status(500).json({ message: "Internal Server Error" }))
 }
 
+const addMovie = (req, res) =>{
+    const { title, img_address, description, genre } = req.body;
+    Movie.create({ title, img_address, description, genre })
+    .catch(err => res.status(500).json({message: "Internal Server Error"})) 
+}
+
 module.exports = {
     getMovies,
-    getMovie
+    getMovie,
+    addMovie
 }
