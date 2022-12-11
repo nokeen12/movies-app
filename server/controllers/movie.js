@@ -19,6 +19,7 @@ const getMovie = (req, res) => {
 const addMovie = (req, res) =>{
     const { title, img_address, description, genre } = req.body;
     Movie.create({ title, img_address, description, genre })
+    .then(movie => res.status(201).json({movie}))
     .catch(err => res.status(500).json({message: "Internal Server Error"})) 
 }
 
