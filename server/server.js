@@ -13,10 +13,13 @@ app.get('/', (req, res) =>{
 })
 
 const indexRoutes = require('./routes/index.routes');
-app.use("/", indexRoutes)
+app.use("/", indexRoutes);
 
 const userRoutes = require('./routes/user.routes');
-app.use("/user", userRoutes)
+app.use("/user", userRoutes);
+
+const movieRoutes = require('./routes/movie.routes.js');
+app.use("/movie", movieRoutes);
 
 app.listen(PORT, () => console.log("Server is listening to port " + PORT));
 module.exports = app;

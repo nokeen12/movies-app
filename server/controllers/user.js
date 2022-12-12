@@ -6,14 +6,14 @@ const getUsers = (req, res) => {
         const userList = users.map(user => user.username)
         res.status(201).json({userList})
     })
-    .catch(err => res.status(500).json({ message: "Internal Server Error" }))
+    .catch(err => res.status(500).json({ message: "Internal Server Error: " + err}))
 }
 
 const getUser = (req, res) => {
     const { id } = req.params
     User.findById(id)
     .then(user => res.status(201).json({user}))
-    .catch(err => res.status(500).json({ message: "Internal Server Error" }))
+    .catch(err => res.status(500).json({ message: "Internal Server Error: " + err}))
 }
 
 module.exports = {
