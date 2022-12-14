@@ -1,4 +1,5 @@
 const Movie = require("../models/Movie.model");
+const mongoose = require('mongoose');
 
 const getMovies = (req, res) => {
     Movie.find()
@@ -23,8 +24,21 @@ const addMovie = (req, res) =>{
     .catch(err => res.status(500).json({message: "Internal Server Error: " + err})) 
 }
 
+const delMovie = (req, res) =>{
+    const { id } = req.params
+
+    if(!mongoose.Types.ObjectId.isValid(id)){
+        res.status(400).json({message: 'Specified id is not valid'});
+        return;
+    }
+
+    Movie.findByIdAndRemove(id)
+    .then(() => res.json({message: `Product with ${id} removed successfully`}))
+    .catch(err => res.json(err));
+}
 module.exports = {
     getMovies,
     getMovie,
-    addMovie
+    addMovie,
+    delMovie
 }

@@ -6,4 +6,6 @@ router.get("/:id", movie.getMovie);
 
 router.post("/add", movie.addMovie);
 
+router.delete("/delete/:id", movie.delMovie);
+
 module.exports = router;
